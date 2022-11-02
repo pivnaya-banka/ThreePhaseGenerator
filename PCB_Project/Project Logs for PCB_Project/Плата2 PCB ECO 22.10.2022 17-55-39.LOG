@@ -1,0 +1,3 @@
+Removed Pin From Net: NetName=+3V3 Pin=DA1-4
+Added Pin To Net: NetName=PWM_CH4 Pin=R58-1
+Added Room: Name=схема

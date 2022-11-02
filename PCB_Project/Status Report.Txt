@@ -1,0 +1,12 @@
+Output: Gerber Files
+Type  : Gerber
+From  : Variant [[No Variations]] of Project [Free Documents]
+   Generated File[Плата2.RUL]
+   Generated File[Плата2.EXTREP]
+   Generated File[Плата2.REP]
+
+
+Files Generated   : 3
+Documents Printed : 0
+
+Finished Output Generation At 1:15:01 On 01.11.2022

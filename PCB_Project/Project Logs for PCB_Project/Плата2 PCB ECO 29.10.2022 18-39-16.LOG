@@ -1,0 +1,11 @@
+Removed Pin From Net: NetName=NetDA5_1 Pin=DA6-3
+Removed Pin From Net: NetName=NetDA6_1 Pin=R18-2
+Removed Pin From Net: NetName=NetDA6_6 Pin=R35-2
+Added Pin To Net: NetName=NetDA5_1 Pin=DA6-5
+Added Pin To Net: NetName=NetDA6_6 Pin=R18-2
+Added Pin To Net: NetName=NetDA6_1 Pin=R35-2
+Added Pin To Net: NetName=NetDA6_3 Pin=DA6-3
+Added Pin To Net: NetName=NetDA6_3 Pin=DA11-1
+Added Pin To Net: NetName=NetDA6_3 Pin=R39-1
+Added Net: Name=NetDA6_3
+Added Room: Name=схема

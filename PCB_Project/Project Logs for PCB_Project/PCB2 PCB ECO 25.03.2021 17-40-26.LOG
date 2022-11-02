@@ -1,0 +1,329 @@
+Added Component: Designator=*1(PBS 4)
+Add component. Clean all parameters for all variants
+Added Component: Designator=*2(PBS 4)
+Add component. Clean all parameters for all variants
+Added Component: Designator=*3(PBS 4)
+Add component. Clean all parameters for all variants
+Added Component: Designator=*4(PBS 4)
+Add component. Clean all parameters for all variants
+Added Component: Designator=*5(PBS 4)
+Add component. Clean all parameters for all variants
+Added Component: Designator=*(PBS 4)
+Add component. Clean all parameters for all variants
+Added Component: Designator=C1(RE_0805)
+Add component. Clean all parameters for all variants
+Added Component: Designator=C2(RE_0805)
+Add component. Clean all parameters for all variants
+Added Component: Designator=C3(RE_0805)
+Add component. Clean all parameters for all variants
+Added Component: Designator=C4(RE_0805)
+Add component. Clean all parameters for all variants
+Added Component: Designator=C5(RE_0805)
+Add component. Clean all parameters for all variants
+Added Component: Designator=C6(RE_0805)
+Add component. Clean all parameters for all variants
+Added Component: Designator=C7(RE_0805)
+Add component. Clean all parameters for all variants
+Added Component: Designator=C8(RE_0805)
+Add component. Clean all parameters for all variants
+Added Component: Designator=C9(RE_0805)
+Add component. Clean all parameters for all variants
+Added Component: Designator=C10(RE_0805)
+Add component. Clean all parameters for all variants
+Added Component: Designator=C11(RE_0805)
+Add component. Clean all parameters for all variants
+Added Component: Designator=C12(RE_0805)
+Add component. Clean all parameters for all variants
+Added Component: Designator=C13(RE_0805)
+Add component. Clean all parameters for all variants
+Added Component: Designator=C14(RE_0805)
+Add component. Clean all parameters for all variants
+Added Component: Designator=C15(RE_0805)
+Add component. Clean all parameters for all variants
+Added Component: Designator=C16(RE_0805)
+Add component. Clean all parameters for all variants
+Added Component: Designator=DA1(Стабилизатор)
+Add component. Clean all parameters for all variants
+Added Component: Designator=DA2(SC_SOIC8)
+Add component. Clean all parameters for all variants
+Added Component: Designator=DA3(SC_SOIC8)
+Add component. Clean all parameters for all variants
+Added Component: Designator=DA4(SC_SOIC8)
+Add component. Clean all parameters for all variants
+Added Component: Designator=DA5(SC_SOIC8)
+Add component. Clean all parameters for all variants
+Added Component: Designator=DA6(SC_SOIC8)
+Add component. Clean all parameters for all variants
+Added Component: Designator=DA7(SC_SOIC8)
+Add component. Clean all parameters for all variants
+Added Component: Designator=R1(RE_0805)
+Add component. Clean all parameters for all variants
+Added Component: Designator=R2(RE_0805)
+Add component. Clean all parameters for all variants
+Added Component: Designator=R3(RE_0805)
+Add component. Clean all parameters for all variants
+Added Component: Designator=R4(RE_0805)
+Add component. Clean all parameters for all variants
+Added Component: Designator=R5(RE_0805)
+Add component. Clean all parameters for all variants
+Added Component: Designator=R6(RE_0805)
+Add component. Clean all parameters for all variants
+Added Component: Designator=R7(RE_0805)
+Add component. Clean all parameters for all variants
+Added Component: Designator=R8(RE_0805)
+Add component. Clean all parameters for all variants
+Added Component: Designator=R9(RE_0805)
+Add component. Clean all parameters for all variants
+Added Component: Designator=R10(RE_0805)
+Add component. Clean all parameters for all variants
+Added Component: Designator=R11(3*1)
+Add component. Clean all parameters for all variants
+Added Component: Designator=R12(RE_0805)
+Add component. Clean all parameters for all variants
+Added Component: Designator=R13(RE_0805)
+Add component. Clean all parameters for all variants
+Added Component: Designator=R14(RE_0805)
+Add component. Clean all parameters for all variants
+Added Component: Designator=R15(RE_0805)
+Add component. Clean all parameters for all variants
+Added Component: Designator=R16(RE_0805)
+Add component. Clean all parameters for all variants
+Added Component: Designator=R17(RE_0805)
+Add component. Clean all parameters for all variants
+Added Component: Designator=R18(RE_0805)
+Add component. Clean all parameters for all variants
+Added Component: Designator=S1(3*1)
+Add component. Clean all parameters for all variants
+Added Component: Designator=S2(3*1)
+Add component. Clean all parameters for all variants
+Added Component: Designator=S3(3*1)
+Add component. Clean all parameters for all variants
+Added Component: Designator=XP1(Выводы)
+Add component. Clean all parameters for all variants
+Added Component: Designator=XP2(Выводы)
+Add component. Clean all parameters for all variants
+Added Pin To Net: NetName=GND Pin=C1-1
+Added Pin To Net: NetName=+15_1 Pin=C1-2
+Added Pin To Net: NetName=GND2 Pin=C2-1
+Added Pin To Net: NetName=+15_2 Pin=C2-2
+Added Pin To Net: NetName=GND Pin=C3-1
+Added Pin To Net: NetName=+5 Pin=C3-2
+Added Pin To Net: NetName=-15_2 Pin=C4-1
+Added Pin To Net: NetName=GND2 Pin=C4-2
+Added Pin To Net: NetName=GND2 Pin=C5-1
+Added Pin To Net: NetName=+15_2 Pin=C5-2
+Added Pin To Net: NetName=GND2 Pin=C6-1
+Added Pin To Net: NetName=-15_2 Pin=C6-2
+Added Pin To Net: NetName=GND Pin=C7-1
+Added Pin To Net: NetName=+15_2 Pin=C7-2
+Added Pin To Net: NetName=GND Pin=C8-1
+Added Pin To Net: NetName=-15_1 Pin=C8-2
+Added Pin To Net: NetName=GND Pin=C9-1
+Added Pin To Net: NetName=Out_U Pin=C9-2
+Added Pin To Net: NetName=GND Pin=C10-1
+Added Pin To Net: NetName=+15_1 Pin=C10-2
+Added Pin To Net: NetName=GND Pin=C11-1
+Added Pin To Net: NetName=-15_1 Pin=C11-2
+Added Pin To Net: NetName=GND Pin=C12-1
+Added Pin To Net: NetName=-15_1 Pin=C12-2
+Added Pin To Net: NetName=Out_I Pin=C13-1
+Added Pin To Net: NetName=GND Pin=C13-2
+Added Pin To Net: NetName=GND Pin=C14-1
+Added Pin To Net: NetName=+15_1 Pin=C14-2
+Added Pin To Net: NetName=GND Pin=C15-1
+Added Pin To Net: NetName=-15_1 Pin=C15-2
+Added Pin To Net: NetName=+15_1 Pin=C16-1
+Added Pin To Net: NetName=GND Pin=C16-2
+Added Pin To Net: NetName=+15_1 Pin=DA1-1
+Added Pin To Net: NetName=GND Pin=DA1-2
+Added Pin To Net: NetName=+5 Pin=DA1-3
+Added Pin To Net: NetName=NetDA2_2 Pin=DA2-2
+Added Pin To Net: NetName=GND2 Pin=DA2-3
+Added Pin To Net: NetName=+15_2 Pin=DA2-4
+Added Pin To Net: NetName=+5 Pin=DA2-5
+Added Pin To Net: NetName=NetDA2_6 Pin=DA2-6
+Added Pin To Net: NetName=-15_2 Pin=DA2-7
+Added Pin To Net: NetName=NetDA3_1 Pin=DA3-1
+Added Pin To Net: NetName=NetDA3_2 Pin=DA3-2
+Added Pin To Net: NetName=NetDA3_3 Pin=DA3-3
+Added Pin To Net: NetName=-15_1 Pin=DA3-4
+Added Pin To Net: NetName=GND Pin=DA3-5
+Added Pin To Net: NetName=+15_1 Pin=DA3-8
+Added Pin To Net: NetName=GND Pin=DA4-3
+Added Pin To Net: NetName=-15_2 Pin=DA4-4
+Added Pin To Net: NetName=GND2 Pin=DA4-5
+Added Pin To Net: NetName=NetDA4_6 Pin=DA4-6
+Added Pin To Net: NetName=NetDA4_7 Pin=DA4-7
+Added Pin To Net: NetName=+15_2 Pin=DA4-8
+Added Pin To Net: NetName=GND Pin=DA5-3
+Added Pin To Net: NetName=+15_1 Pin=DA5-4
+Added Pin To Net: NetName=+5 Pin=DA5-5
+Added Pin To Net: NetName=NetDA5_6 Pin=DA5-6
+Added Pin To Net: NetName=-15_1 Pin=DA5-7
+Added Pin To Net: NetName=NetDA3_1 Pin=DA6-1
+Added Pin To Net: NetName=GND Pin=DA6-3
+Added Pin To Net: NetName=+15_2 Pin=DA6-4
+Added Pin To Net: NetName=+5 Pin=DA6-5
+Added Pin To Net: NetName=NetDA6_6 Pin=DA6-6
+Added Pin To Net: NetName=-15_1 Pin=DA6-7
+Added Pin To Net: NetName=GND Pin=DA7-1
+Added Pin To Net: NetName=NetDA7_2 Pin=DA7-2
+Added Pin To Net: NetName=-15_1 Pin=DA7-4
+Added Pin To Net: NetName=PT Pin=DA7-7
+Added Pin To Net: NetName=+15_1 Pin=DA7-8
+Added Pin To Net: NetName=NetR1_1 Pin=R1-1
+Added Pin To Net: NetName=NetDA3_2 Pin=R1-2
+Added Pin To Net: NetName=NetDA2_2 Pin=R2-1
+Added Pin To Net: NetName=NetDA3_2 Pin=R2-2
+Added Pin To Net: NetName=GND Pin=R3-1
+Added Pin To Net: NetName=NetDA3_3 Pin=R3-2
+Added Pin To Net: NetName=NetDA3_2 Pin=R4-1
+Added Pin To Net: NetName=NetDA3_1 Pin=R4-2
+Added Pin To Net: NetName=Control_Switch Pin=R5-1
+Added Pin To Net: NetName=NetDA2_6 Pin=R5-2
+Added Pin To Net: NetName=NetDA4_6 Pin=R6-1
+Added Pin To Net: NetName=NetDA4_7 Pin=R7-1
+Added Pin To Net: NetName=NetDA4_6 Pin=R7-2
+Added Pin To Net: NetName=NetR8_1 Pin=R8-1
+Added Pin To Net: NetName=NetDA6_6 Pin=R8-2
+Added Pin To Net: NetName=Out_U Pin=R9-1
+Added Pin To Net: NetName=NetDA4_7 Pin=R9-2
+Added Pin To Net: NetName=GND2 Pin=R10-1
+Added Pin To Net: NetName=NetDA7_2 Pin=R11-2
+Added Pin To Net: NetName=GND Pin=R12-1
+Added Pin To Net: NetName=Out_I Pin=R13-2
+Added Pin To Net: NetName=NetDA5_6 Pin=R14-1
+Added Pin To Net: NetName=Control_Switch Pin=R14-2
+Added Pin To Net: NetName=PT Pin=R15-1
+Added Pin To Net: NetName=+5 Pin=R15-2
+Added Pin To Net: NetName=+15_1 Pin=R16-2
+Added Pin To Net: NetName=-15_1 Pin=R17-1
+Added Pin To Net: NetName=GND Pin=R18-1
+Added Pin To Net: NetName=GND Pin=S1-1
+Added Pin To Net: NetName=Control_Switch Pin=S1-2
+Added Pin To Net: NetName=In_U Pin=S1-3
+Added Pin To Net: NetName=In_I Pin=S2-1
+Added Pin To Net: NetName=NetR1_1 Pin=S2-2
+Added Pin To Net: NetName=+5 Pin=S2-3
+Added Pin To Net: NetName=GND Pin=S3-1
+Added Pin To Net: NetName=PT Pin=S3-2
+Added Pin To Net: NetName=NetR8_1 Pin=S3-3
+Added Pin To Net: NetName=In_I Pin=XP1-1
+Added Pin To Net: NetName=Out_I Pin=XP1-2
+Added Pin To Net: NetName=-15_1 Pin=XP1-3
+Added Pin To Net: NetName=+15_1 Pin=XP1-4
+Added Pin To Net: NetName=GND Pin=XP1-5
+Added Pin To Net: NetName=In_U Pin=XP2-1
+Added Pin To Net: NetName=Out_U Pin=XP2-2
+Added Pin To Net: NetName=-15_2 Pin=XP2-3
+Added Pin To Net: NetName=+15_2 Pin=XP2-4
+Added Pin To Net: NetName=GND2 Pin=XP2-5
+Added Pin To Net: NetName=Net*1_1 Pin=*1-1
+Added Pin To Net: NetName=Net*1_1 Pin=*1-2
+Added Pin To Net: NetName=Net*1_1 Pin=*2-1
+Added Pin To Net: NetName=Net*1_1 Pin=*2-2
+Added Pin To Net: NetName=Net*1_1 Pin=DA3-7
+Added Pin To Net: NetName=Net*1_1 Pin=DA5-1
+Added Pin To Net: NetName=Net*1_1 Pin=DA7-3
+Added Pin To Net: NetName=Net*1_1 Pin=R13-1
+Added Net: Name=Net*1_1
+Added Pin To Net: NetName=Net*1_3 Pin=*1-3
+Added Pin To Net: NetName=Net*1_3 Pin=*1-4
+Added Pin To Net: NetName=Net*1_3 Pin=*2-3
+Added Pin To Net: NetName=Net*1_3 Pin=*2-4
+Added Pin To Net: NetName=Net*1_3 Pin=*-1
+Added Pin To Net: NetName=Net*1_3 Pin=*-2
+Added Pin To Net: NetName=Net*1_3 Pin=DA3-6
+Added Net: Name=Net*1_3
+Added Pin To Net: NetName=Net*3_1 Pin=*3-1
+Added Pin To Net: NetName=Net*3_1 Pin=*3-2
+Added Pin To Net: NetName=Net*3_1 Pin=*4-1
+Added Pin To Net: NetName=Net*3_1 Pin=*4-2
+Added Pin To Net: NetName=Net*3_1 Pin=DA2-1
+Added Pin To Net: NetName=Net*3_1 Pin=DA4-1
+Added Pin To Net: NetName=Net*3_1 Pin=R6-2
+Added Net: Name=Net*3_1
+Added Pin To Net: NetName=Net*3_3 Pin=*3-3
+Added Pin To Net: NetName=Net*3_3 Pin=*3-4
+Added Pin To Net: NetName=Net*3_3 Pin=*4-3
+Added Pin To Net: NetName=Net*3_3 Pin=*4-4
+Added Pin To Net: NetName=Net*3_3 Pin=*5-3
+Added Pin To Net: NetName=Net*3_3 Pin=*5-4
+Added Pin To Net: NetName=Net*3_3 Pin=DA4-2
+Added Net: Name=Net*3_3
+Added Pin To Net: NetName=Net*5_1 Pin=*5-1
+Added Pin To Net: NetName=Net*5_1 Pin=*5-2
+Added Pin To Net: NetName=Net*5_1 Pin=DA5-2
+Added Net: Name=Net*5_1
+Added Pin To Net: NetName=Net*_3 Pin=*-3
+Added Pin To Net: NetName=Net*_3 Pin=*-4
+Added Pin To Net: NetName=Net*_3 Pin=DA6-2
+Added Net: Name=Net*_3
+Added Pin To Net: NetName=NetDA2_8 Pin=DA2-8
+Added Pin To Net: NetName=NetDA2_8 Pin=R10-2
+Added Net: Name=NetDA2_8
+Added Pin To Net: NetName=NetDA5_8 Pin=DA5-8
+Added Pin To Net: NetName=NetDA5_8 Pin=R18-2
+Added Net: Name=NetDA5_8
+Added Pin To Net: NetName=NetDA6_8 Pin=DA6-8
+Added Pin To Net: NetName=NetDA6_8 Pin=R12-2
+Added Net: Name=NetDA6_8
+Added Pin To Net: NetName=NetR11_1 Pin=R11-1
+Added Pin To Net: NetName=NetR11_1 Pin=R16-1
+Added Net: Name=NetR11_1
+Added Pin To Net: NetName=NetR11_3 Pin=R11-3
+Added Pin To Net: NetName=NetR11_3 Pin=R17-2
+Added Net: Name=NetR11_3
+Added Member To Class: ClassName=схема Member=Component *1 PBS 4
+Added Member To Class: ClassName=схема Member=Component *2 PBS 4
+Added Member To Class: ClassName=схема Member=Component *3 PBS 4
+Added Member To Class: ClassName=схема Member=Component *4 PBS 4
+Added Member To Class: ClassName=схема Member=Component *5 PBS 4
+Added Member To Class: ClassName=схема Member=Component * PBS 4
+Added Member To Class: ClassName=схема Member=Component C1 Конденсатор
+Added Member To Class: ClassName=схема Member=Component C2 Конденсатор
+Added Member To Class: ClassName=схема Member=Component C3 Конденсатор
+Added Member To Class: ClassName=схема Member=Component C4 Конденсатор
+Added Member To Class: ClassName=схема Member=Component C5 Конденсатор
+Added Member To Class: ClassName=схема Member=Component C6 Конденсатор
+Added Member To Class: ClassName=схема Member=Component C7 Конденсатор
+Added Member To Class: ClassName=схема Member=Component C8 Конденсатор
+Added Member To Class: ClassName=схема Member=Component C9 Конденсатор
+Added Member To Class: ClassName=схема Member=Component C10 Конденсатор
+Added Member To Class: ClassName=схема Member=Component C11 Конденсатор
+Added Member To Class: ClassName=схема Member=Component C12 Конденсатор
+Added Member To Class: ClassName=схема Member=Component C13 Конденсатор
+Added Member To Class: ClassName=схема Member=Component C14 Конденсатор
+Added Member To Class: ClassName=схема Member=Component C15 Конденсатор
+Added Member To Class: ClassName=схема Member=Component C16 Конденсатор
+Added Member To Class: ClassName=схема Member=Component DA1 LP2950
+Added Member To Class: ClassName=схема Member=Component DA2 Аналоговый ключ
+Added Member To Class: ClassName=схема Member=Component DA3 Операционный усилитель
+Added Member To Class: ClassName=схема Member=Component DA4 Операционный усилитель
+Added Member To Class: ClassName=схема Member=Component DA5 Аналоговый ключ
+Added Member To Class: ClassName=схема Member=Component DA6 Аналоговый ключ
+Added Member To Class: ClassName=схема Member=Component DA7 LM311
+Added Member To Class: ClassName=схема Member=Component R1 Резистор
+Added Member To Class: ClassName=схема Member=Component R2 Резистор
+Added Member To Class: ClassName=схема Member=Component R3 Резистор
+Added Member To Class: ClassName=схема Member=Component R4 Резистор
+Added Member To Class: ClassName=схема Member=Component R5 Резистор
+Added Member To Class: ClassName=схема Member=Component R6 Резистор
+Added Member To Class: ClassName=схема Member=Component R7 Резистор
+Added Member To Class: ClassName=схема Member=Component R8 Резистор
+Added Member To Class: ClassName=схема Member=Component R9 Резистор
+Added Member To Class: ClassName=схема Member=Component R10 Резистор
+Added Member To Class: ClassName=схема Member=Component R11 Резистор подстрочный
+Added Member To Class: ClassName=схема Member=Component R12 Резистор
+Added Member To Class: ClassName=схема Member=Component R13 Резистор
+Added Member To Class: ClassName=схема Member=Component R14 Резистор
+Added Member To Class: ClassName=схема Member=Component R15 Резистор
+Added Member To Class: ClassName=схема Member=Component R16 Резистор
+Added Member To Class: ClassName=схема Member=Component R17 Резистор
+Added Member To Class: ClassName=схема Member=Component R18 Резистор
+Added Member To Class: ClassName=схема Member=Component S1 HDR3*1
+Added Member To Class: ClassName=схема Member=Component S2 HDR3*1
+Added Member To Class: ClassName=схема Member=Component S3 HDR3*1
+Added Member To Class: ClassName=схема Member=Component XP1 Вывод
+Added Member To Class: ClassName=схема Member=Component XP2 Вывод
+Added Room: Name=схема

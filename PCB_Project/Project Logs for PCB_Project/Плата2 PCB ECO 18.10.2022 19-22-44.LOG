@@ -1,0 +1,11 @@
+Added Component: Designator=DA6(SC_SOIC8)
+Add component. Clean all parameters for all variants
+Added Pin To Net: NetName=NetDA6_1 Pin=DA6-1
+Added Pin To Net: NetName=NetDA6_1 Pin=DA6-2
+Added Pin To Net: NetName=NetDA6_3 Pin=DA6-3
+Added Pin To Net: NetName=GND Pin=DA6-4
+Added Pin To Net: NetName=NetDA5_1 Pin=DA6-5
+Added Pin To Net: NetName=NetDA6_6 Pin=DA6-6
+Added Pin To Net: NetName=NetDA6_6 Pin=DA6-7
+Added Pin To Net: NetName=3V3 Pin=DA6-8
+Added Member To Class: ClassName=схема Member=Component DA6 AD8602

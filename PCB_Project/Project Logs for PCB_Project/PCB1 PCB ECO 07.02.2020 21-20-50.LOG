@@ -1,0 +1,25 @@
+Added Component: Designator=DA3(SOIC-8)
+Add component. Clean all parameters for all variants
+Added Component: Designator=DA4(SOIC-8)
+Add component. Clean all parameters for all variants
+Added Pin To Net: NetName=NetDA3_1 Pin=DA3-1
+Added Pin To Net: NetName=NetDA3_2 Pin=DA3-2
+Added Pin To Net: NetName=NetDA3_3 Pin=DA3-3
+Added Pin To Net: NetName=-15_1 Pin=DA3-4
+Added Pin To Net: NetName=GND Pin=DA3-5
+Added Pin To Net: NetName=NetC9_1 Pin=DA3-6
+Added Pin To Net: NetName=Out_I Pin=DA3-7
+Added Pin To Net: NetName=+15_1 Pin=DA3-8
+Added Pin To Net: NetName=NetC11_0 Pin=DA4-1
+Added Pin To Net: NetName=NetC11_1 Pin=DA4-2
+Added Pin To Net: NetName=GND Pin=DA4-3
+Added Pin To Net: NetName=-15_2 Pin=DA4-4
+Added Pin To Net: NetName=GND2 Pin=DA4-5
+Added Pin To Net: NetName=Out_U Pin=DA4-7
+Added Pin To Net: NetName=+15_2 Pin=DA4-8
+Added Pin To Net: NetName=NetDA4_6 Pin=DA4-6
+Added Pin To Net: NetName=NetDA4_6 Pin=R5-0
+Added Pin To Net: NetName=NetDA4_6 Pin=R7-0
+Added Net: Name=NetDA4_6
+Added Member To Class: ClassName=схема Member=Component DA3 Операционный усилитель
+Added Member To Class: ClassName=схема Member=Component DA4 Операционный усилитель

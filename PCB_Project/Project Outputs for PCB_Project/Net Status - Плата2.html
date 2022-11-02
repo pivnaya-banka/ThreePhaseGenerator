@@ -1,0 +1,686 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 { 
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body { 
+			font-family : segoe ui;
+		}
+
+		td, th {  
+			padding: 0.5em;
+			text-align : left;
+		}
+		th { 
+			background-color : #EEEEEE;
+		
+		}
+		th.column1, td.column1 { 
+			width : 50%; 
+		}
+
+        th.column2, td.column2 {
+            width : 25%;
+        }
+
+		table { 
+			width : 100%; 
+            font-size: 0.9em;
+		}
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 5em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error { 
+			color : red;
+			font-weight : bold;
+		}	
+		tr.onmouseout_odd { 
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+			
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);		
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {	
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}	
+	</script><title>Net Status Report</title>
+</head>
+<body onload="document.getElementById('radio_mm').click()"><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD17\Templates\AD_logo.png
+		"><a href="dxpprocess://Client:SetupPreferences?Server=PCB|PageName=Reports" class="customize"><acronym title="dxpprocess://Client:SetupPreferences?Server=PCB|PageName=Reports">customize</acronym></a><h1>Net Status Report</h1>
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">31.10.2022</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">17:08:20</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:00</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc" class="file"><acronym title="D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc">D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc</acronym></a></td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Units:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">
+<form><input type="radio" name="radio_units" id="radio_mm" onclick="changeUnits(this, 'mm')">mm<input type="radio" name="radio_units" id="radio_mil" onclick="changeUnits(this, 'mil')">mils</form>
+</td>
+</tr>
+</table><a name="IDN1YXCHLTIFD5HQEUKVIEV5IPFNA1U52L0F0ZPZN5XQYGBEO3Q2YG"><table>
+<tr>
+<th class="column1">Nets</th>
+<th class="column2">Layer</th>
+<th class="column3">Length</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=551.181mil|Location2.X=4561.087mil|Location1.Y=676.322mil|Location2.Y=2198.882mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=551.181mil|Location2.X=4561.087mil|Location1.Y=676.322mil|Location2.Y=2198.882mil|Absolute=True">+15</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="126109126">320.3172mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=482.284mil|Location2.X=4561.087mil|Location1.Y=966.472mil|Location2.Y=2868.173mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=482.284mil|Location2.X=4561.087mil|Location1.Y=966.472mil|Location2.Y=2868.173mil|Absolute=True">+5</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="92347986">234.5639mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=582.677mil|Location2.X=4561.024mil|Location1.Y=410.977mil|Location2.Y=2298.819mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=582.677mil|Location2.X=4561.024mil|Location1.Y=410.977mil|Location2.Y=2298.819mil|Absolute=True">-15</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="157649442">400.4296mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=909.386mil|Location2.X=4384.764mil|Location1.Y=1646.276mil|Location2.Y=2625.299mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=909.386mil|Location2.X=4384.764mil|Location1.Y=1646.276mil|Location2.Y=2625.299mil|Absolute=True">1V65</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="70740092">179.6798mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1860.173mil|Location2.X=3779.59mil|Location1.Y=2396mil|Location2.Y=2868.173mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1860.173mil|Location2.X=3779.59mil|Location1.Y=2396mil|Location2.Y=2868.173mil|Absolute=True">3V3</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="24473740">62.1633mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=718.504mil|Location2.X=2368.961mil|Location1.Y=2379.811mil|Location2.Y=3468.173mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=718.504mil|Location2.X=2368.961mil|Location1.Y=2379.811mil|Location2.Y=3468.173mil|Absolute=True">ADC1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="30765971">78.1456mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2108.488mil|Location2.X=3301.244mil|Location1.Y=2330.205mil|Location2.Y=3468.173mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2108.488mil|Location2.X=3301.244mil|Location1.Y=2330.205mil|Location2.Y=3468.173mil|Absolute=True">ADC2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="28988008">73.6295mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2101.906mil|Location2.X=3954.48mil|Location1.Y=2413.669mil|Location2.Y=3468.173mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2101.906mil|Location2.X=3954.48mil|Location1.Y=2413.669mil|Location2.Y=3468.173mil|Absolute=True">ADC3</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="24882188">63.2008mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2001.906mil|Location2.X=3364.354mil|Location1.Y=2561.299mil|Location2.Y=3468.173mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2001.906mil|Location2.X=3364.354mil|Location1.Y=2561.299mil|Location2.Y=3468.173mil|Absolute=True">ADC4</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="18670080">47.422mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">DTR</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="16448261">41.7786mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=438.976mil|Location2.X=4561.087mil|Location1.Y=360.173mil|Location2.Y=3576.835mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=438.976mil|Location2.X=4561.087mil|Location1.Y=360.173mil|Location2.Y=3576.835mil|Absolute=True">GND</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="362322314">920.2987mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1601.906mil|Location2.X=3457.197mil|Location1.Y=3323.457mil|Location2.Y=3543.307mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1601.906mil|Location2.X=3457.197mil|Location1.Y=3323.457mil|Location2.Y=3543.307mil|Absolute=True">LED1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="19323727">49.0823mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1501.906mil|Location2.X=3624.52mil|Location1.Y=3392.354mil|Location2.Y=3592.52mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1501.906mil|Location2.X=3624.52mil|Location1.Y=3392.354mil|Location2.Y=3592.52mil|Absolute=True">LED2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="22283006">56.5988mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1060.52mil|Location2.X=1407.543mil|Location1.Y=562.448mil|Location2.Y=608.448mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1060.52mil|Location2.X=1407.543mil|Location1.Y=562.448mil|Location2.Y=608.448mil|Absolute=True">NetC14_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="2685169">6.8203mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1165.575mil|Location2.X=1823.339mil|Location1.Y=626.322mil|Location2.Y=856.299mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1165.575mil|Location2.X=1823.339mil|Location1.Y=626.322mil|Location2.Y=856.299mil|Absolute=True">NetC14_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="9331603">23.7023mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=998.252mil|Location2.X=1137.575mil|Location1.Y=636.448mil|Location2.Y=900.511mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=998.252mil|Location2.X=1137.575mil|Location1.Y=636.448mil|Location2.Y=900.511mil|Absolute=True">NetC17_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="3115214">7.9126mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2408.945mil|Location2.X=2755.968mil|Location1.Y=560.079mil|Location2.Y=607.944mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2408.945mil|Location2.X=2755.968mil|Location1.Y=560.079mil|Location2.Y=607.944mil|Absolute=True">NetC27_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="2685169">6.8203mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2514mil|Location2.X=3171.764mil|Location1.Y=626.322mil|Location2.Y=852.362mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2514mil|Location2.X=3171.764mil|Location1.Y=626.322mil|Location2.Y=852.362mil|Absolute=True">NetC27_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="9391647">23.8548mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2346.677mil|Location2.X=2486mil|Location1.Y=634.079mil|Location2.Y=895.773mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2346.677mil|Location2.X=2486mil|Location1.Y=634.079mil|Location2.Y=895.773mil|Absolute=True">NetC28_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="3067824">7.7923mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3737.685mil|Location2.X=4084.709mil|Location1.Y=562.449mil|Location2.Y=611.606mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3737.685mil|Location2.X=4084.709mil|Location1.Y=562.449mil|Location2.Y=611.606mil|Absolute=True">NetC39_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="2685169">6.8203mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3842.74mil|Location2.X=4500.504mil|Location1.Y=629.48mil|Location2.Y=866.142mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3842.74mil|Location2.X=4500.504mil|Location1.Y=629.48mil|Location2.Y=866.142mil|Absolute=True">NetC39_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="9531290">24.2095mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3667.732mil|Location2.X=3814.74mil|Location1.Y=639.606mil|Location2.Y=898.929mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3667.732mil|Location2.X=3814.74mil|Location1.Y=639.606mil|Location2.Y=898.929mil|Absolute=True">NetC40_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="3144675">7.9875mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3232.504mil|Location2.X=3364.354mil|Location1.Y=2366.039mil|Location2.Y=2527.669mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3232.504mil|Location2.X=3364.354mil|Location1.Y=2366.039mil|Location2.Y=2527.669mil|Absolute=True">NetC49_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1834803">4.6604mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3392.354mil|Location2.X=3602.425mil|Location1.Y=2281.717mil|Location2.Y=2430.039mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3392.354mil|Location2.X=3602.425mil|Location1.Y=2281.717mil|Location2.Y=2430.039mil|Absolute=True">NetC53_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="2279169">5.7891mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2834.583mil|Location2.X=3171.764mil|Location1.Y=612.448mil|Location2.Y=658.448mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2834.583mil|Location2.X=3171.764mil|Location1.Y=612.448mil|Location2.Y=658.448mil|Absolute=True">NetDA10_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="2590007">6.5786mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2795.173mil|Location2.X=2859.173mil|Location1.Y=1346.78mil|Location2.Y=1674.538mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2795.173mil|Location2.X=2859.173mil|Location1.Y=1346.78mil|Location2.Y=1674.538mil|Absolute=True">NetDA11_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="2585774">6.5679mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2851.52mil|Location2.X=3279.929mil|Location1.Y=1265.631mil|Location2.Y=1618.276mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2851.52mil|Location2.X=3279.929mil|Location1.Y=1265.631mil|Location2.Y=1618.276mil|Absolute=True">NetDA11_3</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="9564785">24.2946mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2894.331mil|Location2.X=3065.866mil|Location1.Y=1051.465mil|Location2.Y=1268.166mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2894.331mil|Location2.X=3065.866mil|Location1.Y=1051.465mil|Location2.Y=1268.166mil|Absolute=True">NetDA11_5</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="2519612">6.3998mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2801.52mil|Location2.X=3029.709mil|Location1.Y=1169.615mil|Location2.Y=1329.631mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2801.52mil|Location2.X=3029.709mil|Location1.Y=1169.615mil|Location2.Y=1329.631mil|Absolute=True">NetDA11_6</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="2423413">6.1555mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1860.134mil|Location2.X=2261.291mil|Location1.Y=1042.726mil|Location2.Y=1088.726mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1860.134mil|Location2.X=2261.291mil|Location1.Y=1042.726mil|Location2.Y=1088.726mil|Absolute=True">NetDA12_6</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="3237741">8.2239mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3524.433mil|Location2.X=3612.858mil|Location1.Y=1552.685mil|Location2.Y=1946.512mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3524.433mil|Location2.X=3612.858mil|Location1.Y=1552.685mil|Location2.Y=1946.512mil|Absolute=True">NetDA13_7</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="3402933">8.6434mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4163.323mil|Location2.X=4500.504mil|Location1.Y=615.605mil|Location2.Y=661.605mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4163.323mil|Location2.X=4500.504mil|Location1.Y=615.605mil|Location2.Y=661.605mil|Absolute=True">NetDA14_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="2590007">6.5786mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3481.236mil|Location2.X=3822.402mil|Location1.Y=1110.953mil|Location2.Y=1651.237mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3481.236mil|Location2.X=3822.402mil|Location1.Y=1110.953mil|Location2.Y=1651.237mil|Absolute=True">NetDA15_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="8009550">20.3443mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3581.236mil|Location2.X=3748.402mil|Location1.Y=1255mil|Location2.Y=1474.071mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3581.236mil|Location2.X=3748.402mil|Location1.Y=1255mil|Location2.Y=1474.071mil|Absolute=True">NetDA15_6</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="2586506">6.5697mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3483.795mil|Location2.X=3582.347mil|Location1.Y=1160.953mil|Location2.Y=1474.071mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3483.795mil|Location2.X=3582.347mil|Location1.Y=1160.953mil|Location2.Y=1474.071mil|Absolute=True">NetDA15_7</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="2455529">6.237mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3681.039mil|Location2.X=4111.882mil|Location1.Y=1349.15mil|Location2.Y=2370.142mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3681.039mil|Location2.X=4111.882mil|Location1.Y=1349.15mil|Location2.Y=2370.142mil|Absolute=True">NetDA16_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="12681883">32.212mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4121.543mil|Location2.X=4185.543mil|Location1.Y=1349.15mil|Location2.Y=1666.701mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4121.543mil|Location2.X=4185.543mil|Location1.Y=1349.15mil|Location2.Y=1666.701mil|Absolute=True">NetDA16_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="2585774">6.5679mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4180.26mil|Location2.X=4608.669mil|Location1.Y=1268.001mil|Location2.Y=1618.276mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4180.26mil|Location2.X=4608.669mil|Location1.Y=1268.001mil|Location2.Y=1618.276mil|Absolute=True">NetDA16_3</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="9588480">24.3547mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4223.071mil|Location2.X=4394.606mil|Location1.Y=1053.834mil|Location2.Y=1270.536mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4223.071mil|Location2.X=4394.606mil|Location1.Y=1053.834mil|Location2.Y=1270.536mil|Absolute=True">NetDA16_5</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="2519612">6.3998mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4130.26mil|Location2.X=4358.449mil|Location1.Y=1171.985mil|Location2.Y=1332.001mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4130.26mil|Location2.X=4358.449mil|Location1.Y=1171.985mil|Location2.Y=1332.001mil|Absolute=True">NetDA16_6</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="2423413">6.1555mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3681.039mil|Location2.X=3880.48mil|Location1.Y=2379.858mil|Location2.Y=2477.669mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3681.039mil|Location2.X=3880.48mil|Location1.Y=2379.858mil|Location2.Y=2477.669mil|Absolute=True">NetDA17_6</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1566930">3.98mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3181.189mil|Location2.X=3582.347mil|Location1.Y=1053.764mil|Location2.Y=1099.764mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3181.189mil|Location2.X=3582.347mil|Location1.Y=1053.764mil|Location2.Y=1099.764mil|Absolute=True">NetDA18_6</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="3198819">8.125mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=852.583mil|Location2.X=941.008mil|Location1.Y=1557.425mil|Location2.Y=1951.252mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=852.583mil|Location2.X=941.008mil|Location1.Y=1557.425mil|Location2.Y=1951.252mil|Absolute=True">NetDA2_7</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="3408992">8.6588mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=809.386mil|Location2.X=1152.52mil|Location1.Y=1115.693mil|Location2.Y=1655.976mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=809.386mil|Location2.X=1152.52mil|Location1.Y=1115.693mil|Location2.Y=1655.976mil|Absolute=True">NetDA3_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="8009550">20.3443mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=909.386mil|Location2.X=1078.52mil|Location1.Y=1259.74mil|Location2.Y=1478.811mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=909.386mil|Location2.X=1078.52mil|Location1.Y=1259.74mil|Location2.Y=1478.811mil|Absolute=True">NetDA3_6</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="2614345">6.6404mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=811.945mil|Location2.X=910.496mil|Location1.Y=1164.764mil|Location2.Y=1478.811mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=811.945mil|Location2.X=910.496mil|Location1.Y=1164.764mil|Location2.Y=1478.811mil|Absolute=True">NetDA3_7</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="2967419">7.5372mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1486.158mil|Location2.X=1823.339mil|Location1.Y=611.661mil|Location2.Y=657.944mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1486.158mil|Location2.X=1823.339mil|Location1.Y=611.661mil|Location2.Y=657.944mil|Absolute=True">NetDA4_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="2590007">6.5786mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1289.37mil|Location2.X=1781.559mil|Location1.Y=1345.993mil|Location2.Y=2327.622mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1289.37mil|Location2.X=1781.559mil|Location1.Y=1345.993mil|Location2.Y=2327.622mil|Absolute=True">NetDA5_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="12961435">32.922mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1444.378mil|Location2.X=1508.378mil|Location1.Y=1345.993mil|Location2.Y=1686.386mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1444.378mil|Location2.X=1508.378mil|Location1.Y=1345.993mil|Location2.Y=1686.386mil|Absolute=True">NetDA5_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="2688432">6.8286mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1503.094mil|Location2.X=1931.504mil|Location1.Y=1264.843mil|Location2.Y=1619.858mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1503.094mil|Location2.X=1931.504mil|Location1.Y=1264.843mil|Location2.Y=1619.858mil|Absolute=True">NetDA5_3</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="9866609">25.0612mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1545.906mil|Location2.X=1717.441mil|Location1.Y=1048.308mil|Location2.Y=1267.379mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1545.906mil|Location2.X=1717.441mil|Location1.Y=1048.308mil|Location2.Y=1267.379mil|Absolute=True">NetDA5_5</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="2543307">6.46mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1453.094mil|Location2.X=1681.283mil|Location1.Y=1168.828mil|Location2.Y=1328.843mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1453.094mil|Location2.X=1681.283mil|Location1.Y=1168.828mil|Location2.Y=1328.843mil|Absolute=True">NetDA5_6</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="2423413">6.1555mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1584.874mil|Location2.X=1781.559mil|Location1.Y=2346mil|Location2.Y=2443.811mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1584.874mil|Location2.X=1781.559mil|Location1.Y=2346mil|Location2.Y=2443.811mil|Absolute=True">NetDA6_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1539369">3.91mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1860.173mil|Location2.X=2783.142mil|Location1.Y=1346.78mil|Location2.Y=2277.622mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1860.173mil|Location2.X=2783.142mil|Location1.Y=1346.78mil|Location2.Y=2277.622mil|Absolute=True">NetDA6_5</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="17012570">43.2119mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1860.173mil|Location2.X=2080.488mil|Location1.Y=2296mil|Location2.Y=2394.205mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1860.173mil|Location2.X=2080.488mil|Location1.Y=2296mil|Location2.Y=2394.205mil|Absolute=True">NetDA6_6</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1690403">4.2936mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=509.339mil|Location2.X=910.496mil|Location1.Y=1059.677mil|Location2.Y=1105.677mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=509.339mil|Location2.X=910.496mil|Location1.Y=1059.677mil|Location2.Y=1105.677mil|Absolute=True">NetDA7_6</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="3213497">8.1623mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2203.378mil|Location2.X=2291.803mil|Location1.Y=1545.577mil|Location2.Y=1939.403mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2203.378mil|Location2.X=2291.803mil|Location1.Y=1545.577mil|Location2.Y=1939.403mil|Absolute=True">NetDA8_7</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="3402933">8.6434mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2160.181mil|Location2.X=2501.346mil|Location1.Y=1103.845mil|Location2.Y=1644.128mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2160.181mil|Location2.X=2501.346mil|Location1.Y=1103.845mil|Location2.Y=1644.128mil|Absolute=True">NetDA9_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="8009550">20.3443mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2260.181mil|Location2.X=2427.346mil|Location1.Y=1247.892mil|Location2.Y=1466.963mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2260.181mil|Location2.X=2427.346mil|Location1.Y=1247.892mil|Location2.Y=1466.963mil|Absolute=True">NetDA9_6</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="2586506">6.5697mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2162.74mil|Location2.X=2261.291mil|Location1.Y=1153.845mil|Location2.Y=1466.963mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2162.74mil|Location2.X=2261.291mil|Location1.Y=1153.845mil|Location2.Y=1466.963mil|Absolute=True">NetDA9_7</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="2463770">6.258mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3393.197mil|Location2.X=3457.197mil|Location1.Y=3159.386mil|Location2.Y=3295.457mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3393.197mil|Location2.X=3457.197mil|Location1.Y=3159.386mil|Location2.Y=3295.457mil|Absolute=True">NetHL1_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="933228">2.3704mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3560.52mil|Location2.X=3624.52mil|Location1.Y=3159.386mil|Location2.Y=3364.354mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3560.52mil|Location2.X=3624.52mil|Location1.Y=3159.386mil|Location2.Y=3364.354mil|Absolute=True">NetHL2_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1622204">4.1204mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=783.402mil|Location2.X=1087.661mil|Location1.Y=665.291mil|Location2.Y=1197.315mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=783.402mil|Location2.X=1087.661mil|Location1.Y=665.291mil|Location2.Y=1197.315mil|Absolute=True">PWM1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="6414667">16.2933mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2112.142mil|Location2.X=2438.457mil|Location1.Y=635.764mil|Location2.Y=1185.467mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2112.142mil|Location2.X=2438.457mil|Location1.Y=635.764mil|Location2.Y=1185.467mil|Absolute=True">PWM2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="6859847">17.424mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3539.307mil|Location2.X=3759.512mil|Location1.Y=625.921mil|Location2.Y=1192.575mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3539.307mil|Location2.X=3759.512mil|Location1.Y=625.921mil|Location2.Y=1192.575mil|Absolute=True">PWM3</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="6094625">15.4803mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=842.457mil|Location2.X=1268.961mil|Location1.Y=2029.866mil|Location2.Y=2868.173mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=842.457mil|Location2.X=1268.961mil|Location1.Y=2029.866mil|Location2.Y=2868.173mil|Absolute=True">PWM_CH1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="9450783">24.005mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1301.906mil|Location2.X=2277.622mil|Location1.Y=2018.018mil|Location2.Y=2868.173mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1301.906mil|Location2.X=2277.622mil|Location1.Y=2018.018mil|Location2.Y=2868.173mil|Absolute=True">PWM_CH2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="16238797">41.2465mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1401.906mil|Location2.X=3562.858mil|Location1.Y=2025.126mil|Location2.Y=3039.433mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1401.906mil|Location2.X=3562.858mil|Location1.Y=2025.126mil|Location2.Y=3039.433mil|Absolute=True">PWM_CH3</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="30406712">77.233mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1501.906mil|Location2.X=3209.126mil|Location1.Y=2366.039mil|Location2.Y=2868.173mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1501.906mil|Location2.X=3209.126mil|Location1.Y=2366.039mil|Location2.Y=2868.173mil|Absolute=True">PWM_CH4</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="19370170">49.2002mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">RX</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="14327485">36.3918mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">RX_Term</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="12994841">33.0069mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=433.071mil|Location2.X=968.961mil|Location1.Y=868.047mil|Location2.Y=2868.173mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=433.071mil|Location2.X=968.961mil|Location1.Y=868.047mil|Location2.Y=2868.173mil|Absolute=True">SW1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="23081617">58.6273mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1001.906mil|Location2.X=1924.134mil|Location1.Y=851.096mil|Location2.Y=2868.173mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1001.906mil|Location2.X=1924.134mil|Location1.Y=851.096mil|Location2.Y=2868.173mil|Absolute=True">SW2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="27456939">69.7406mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1101.906mil|Location2.X=3279.929mil|Location1.Y=862.134mil|Location2.Y=2952.756mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1101.906mil|Location2.X=3279.929mil|Location1.Y=862.134mil|Location2.Y=2952.756mil|Absolute=True">SW3</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="42285564">107.4053mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">TX</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="14682647">37.2939mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">TX_Term</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="14812647">37.6241mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1486.158mil|Location2.X=2264.63mil|Location1.Y=360.173mil|Location2.Y=1029.308mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1486.158mil|Location2.X=2264.63mil|Location1.Y=360.173mil|Location2.Y=1029.308mil|Absolute=True">Ua</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="11868876">30.1469mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2297.575mil|Location2.X=3108.331mil|Location1.Y=360.173mil|Location2.Y=1032.465mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2297.575mil|Location2.X=3108.331mil|Location1.Y=360.173mil|Location2.Y=1032.465mil|Absolute=True">Ub</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="18321157">46.5357mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\%D0%A3%D1%87%D0%B5%D0%B1%D0%B0\%D0%A1%D1%82%D0%B5%D0%BD%D0%B4 %D1%80%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D1%82%D0%BE%D1%80\PCB_Project\%D0%9F%D0%BB%D0%B0%D1%82%D0%B02.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2397.575mil|Location2.X=4437.071mil|Location1.Y=354.331mil|Location2.Y=1034.834mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2397.575mil|Location2.X=4437.071mil|Location1.Y=354.331mil|Location2.Y=1034.834mil|Absolute=True">Uc</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="30789686">78.2058mm
+			</a></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>

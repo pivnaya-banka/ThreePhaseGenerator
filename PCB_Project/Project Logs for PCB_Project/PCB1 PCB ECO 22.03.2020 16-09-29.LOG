@@ -1,0 +1,21 @@
+Removed Pin From Net: NetName=-15_1 Pin=DA4-4
+Removed Pin From Net: NetName=GND Pin=DA4-5
+Removed Pin From Net: NetName=NetDA4_7 Pin=DA4-7
+Removed Pin From Net: NetName=+15_1 Pin=DA4-8
+Removed Pin From Net: NetName=NetDA3_6 Pin=R6-1
+Removed Pin From Net: NetName=NetDA3_6 Pin=R7-2
+Removed Pin From Net: NetName=NetDA4_6 Pin=R10-2
+Removed Pin From Net: NetName=NetDA4_6 Pin=XP3-2
+Added Pin To Net: NetName=NetDA4_7 Pin=DA3-7
+Added Pin To Net: NetName=-15_2 Pin=DA4-4
+Added Pin To Net: NetName=GND2 Pin=DA4-5
+Added Pin To Net: NetName=+15_2 Pin=DA4-8
+Added Pin To Net: NetName=NetDA4_6 Pin=R6-1
+Added Pin To Net: NetName=NetDA4_6 Pin=R7-2
+Added Pin To Net: NetName=NetDA3_6 Pin=R10-2
+Added Pin To Net: NetName=NetDA3_6 Pin=XP3-2
+Change Net Name : Old Net Name=NetDA4_7 New Net Name=NetDA3_7
+Added Pin To Net: NetName=NetDA4_7 Pin=DA4-7
+Added Pin To Net: NetName=NetDA4_7 Pin=R7-1
+Added Pin To Net: NetName=NetDA4_7 Pin=R9-2
+Added Net: Name=NetDA4_7

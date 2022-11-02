@@ -1,0 +1,20 @@
+Removed Pin From Net: NetName=NetDA3_1 Pin=DA3-1
+Removed Pin From Net: NetName=GND Pin=DA3-3
+Removed Pin From Net: NetName=NetDA3_6 Pin=DA3-6
+Added Pin To Net: NetName=NetDA3_6 Pin=DA3-2
+Added Pin To Net: NetName=GND Pin=DA3-5
+Added Pin To Net: NetName=NetDA3_1 Pin=DA3-7
+Change Net Name : Old Net Name=NetDA3_1 New Net Name=NetDA3_7
+Change Net Name : Old Net Name=NetDA3_6 New Net Name=NetDA3_2
+Added Pin To Net: NetName=NetDA3_1 Pin=DA3-1
+Added Pin To Net: NetName=NetDA3_1 Pin=DA6-1
+Added Pin To Net: NetName=NetDA3_1 Pin=R4-2
+Added Net: Name=NetDA3_1
+Added Pin To Net: NetName=NetDA3_3 Pin=DA3-3
+Added Pin To Net: NetName=NetDA3_3 Pin=R3-2
+Added Net: Name=NetDA3_3
+Added Pin To Net: NetName=NetDA3_6 Pin=DA3-6
+Added Pin To Net: NetName=NetDA3_6 Pin=R10-2
+Added Pin To Net: NetName=NetDA3_6 Pin=XP3-2
+Added Net: Name=NetDA3_6
+Added Room: Name=схема

@@ -1,0 +1,87 @@
+Net Status Report
+Filename     : D:\Учеба\Стенд рекупертор\PCB_Project\Плата2.PcbDoc
+Date         : 31.10.2022
+Time         : 17:08:20
+Time Elapsed : 00:00:00
+
+Nets, Layer, Length
+    +15, Signal Layers Only, 320.3172mm
+    +5, Signal Layers Only, 234.5639mm
+    -15, Signal Layers Only, 400.4296mm
+    1V65, Signal Layers Only, 179.6798mm
+    3V3, Signal Layers Only, 62.1633mm
+    ADC1, Signal Layers Only, 78.1456mm
+    ADC2, Signal Layers Only, 73.6295mm
+    ADC3, Signal Layers Only, 63.2008mm
+    ADC4, Signal Layers Only, 47.422mm
+    DTR, Signal Layers Only, 41.7786mm
+    GND, Signal Layers Only, 920.2987mm
+    LED1, Signal Layers Only, 49.0823mm
+    LED2, Signal Layers Only, 56.5988mm
+    NetC14_1, Signal Layers Only, 6.8203mm
+    NetC14_2, Signal Layers Only, 23.7023mm
+    NetC17_2, Signal Layers Only, 7.9126mm
+    NetC27_1, Signal Layers Only, 6.8203mm
+    NetC27_2, Signal Layers Only, 23.8548mm
+    NetC28_2, Signal Layers Only, 7.7923mm
+    NetC39_1, Signal Layers Only, 6.8203mm
+    NetC39_2, Signal Layers Only, 24.2095mm
+    NetC40_2, Signal Layers Only, 7.9875mm
+    NetC49_1, Signal Layers Only, 4.6604mm
+    NetC53_1, Signal Layers Only, 5.7891mm
+    NetDA10_2, Signal Layers Only, 6.5786mm
+    NetDA11_2, Signal Layers Only, 6.5679mm
+    NetDA11_3, Signal Layers Only, 24.2946mm
+    NetDA11_5, Signal Layers Only, 6.3998mm
+    NetDA11_6, Signal Layers Only, 6.1555mm
+    NetDA12_6, Signal Layers Only, 8.2239mm
+    NetDA13_7, Signal Layers Only, 8.6434mm
+    NetDA14_2, Signal Layers Only, 6.5786mm
+    NetDA15_1, Signal Layers Only, 20.3443mm
+    NetDA15_6, Signal Layers Only, 6.5697mm
+    NetDA15_7, Signal Layers Only, 6.237mm
+    NetDA16_1, Signal Layers Only, 32.212mm
+    NetDA16_2, Signal Layers Only, 6.5679mm
+    NetDA16_3, Signal Layers Only, 24.3547mm
+    NetDA16_5, Signal Layers Only, 6.3998mm
+    NetDA16_6, Signal Layers Only, 6.1555mm
+    NetDA17_6, Signal Layers Only, 3.98mm
+    NetDA18_6, Signal Layers Only, 8.125mm
+    NetDA2_7, Signal Layers Only, 8.6588mm
+    NetDA3_1, Signal Layers Only, 20.3443mm
+    NetDA3_6, Signal Layers Only, 6.6404mm
+    NetDA3_7, Signal Layers Only, 7.5372mm
+    NetDA4_2, Signal Layers Only, 6.5786mm
+    NetDA5_1, Signal Layers Only, 32.922mm
+    NetDA5_2, Signal Layers Only, 6.8286mm
+    NetDA5_3, Signal Layers Only, 25.0612mm
+    NetDA5_5, Signal Layers Only, 6.46mm
+    NetDA5_6, Signal Layers Only, 6.1555mm
+    NetDA6_1, Signal Layers Only, 3.91mm
+    NetDA6_5, Signal Layers Only, 43.2119mm
+    NetDA6_6, Signal Layers Only, 4.2936mm
+    NetDA7_6, Signal Layers Only, 8.1623mm
+    NetDA8_7, Signal Layers Only, 8.6434mm
+    NetDA9_1, Signal Layers Only, 20.3443mm
+    NetDA9_6, Signal Layers Only, 6.5697mm
+    NetDA9_7, Signal Layers Only, 6.258mm
+    NetHL1_1, Signal Layers Only, 2.3704mm
+    NetHL2_1, Signal Layers Only, 4.1204mm
+    PWM1, Signal Layers Only, 16.2933mm
+    PWM2, Signal Layers Only, 17.424mm
+    PWM3, Signal Layers Only, 15.4803mm
+    PWM_CH1, Signal Layers Only, 24.005mm
+    PWM_CH2, Signal Layers Only, 41.2465mm
+    PWM_CH3, Signal Layers Only, 77.233mm
+    PWM_CH4, Signal Layers Only, 49.2002mm
+    RX, Signal Layers Only, 36.3918mm
+    RX_Term, Signal Layers Only, 33.0069mm
+    SW1, Signal Layers Only, 58.6273mm
+    SW2, Signal Layers Only, 69.7406mm
+    SW3, Signal Layers Only, 107.4053mm
+    TX, Signal Layers Only, 37.2939mm
+    TX_Term, Signal Layers Only, 37.6241mm
+    Ua, Signal Layers Only, 30.1469mm
+    Ub, Signal Layers Only, 46.5357mm
+    Uc, Signal Layers Only, 78.2058mm
+count : 79

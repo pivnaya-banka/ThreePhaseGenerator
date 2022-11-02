@@ -1,0 +1,6 @@
+Removed Pin From Net: NetName=+3V3 Pin=DA1-4
+Removed Pin From Net: NetName=LED1 Pin=U1-2
+Removed Pin From Net: NetName=LED2 Pin=U1-3
+Added Pin To Net: NetName=LED2 Pin=U1-18
+Added Pin To Net: NetName=LED1 Pin=U1-19
+Added Room: Name=схема

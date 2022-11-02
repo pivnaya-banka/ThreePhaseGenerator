@@ -1,0 +1,7 @@
+Removed Pin From Net: NetName=GND Pin=C10-1
+Removed Pin From Net: NetName=3V3 Pin=C10-2
+Removed Pin From Net: NetName=3V3 Pin=XP3-1
+Removed Pin From Net: NetName=GND Pin=XP3-4
+Removed Member From Class: ClassName=схема Member=C10
+Removed Member From Class: ClassName=схема Member=XP3
+Added Room: Name=схема

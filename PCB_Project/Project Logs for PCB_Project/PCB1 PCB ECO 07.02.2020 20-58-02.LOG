@@ -1,0 +1,5 @@
+Added Pin To Net: NetName=In_U Pin=XP2-1
+Added Pin To Net: NetName=Out_U Pin=XP2-2
+Added Pin To Net: NetName=-15_2 Pin=XP2-3
+Added Pin To Net: NetName=+15_2 Pin=XP2-4
+Added Pin To Net: NetName=GND2 Pin=XP2-5

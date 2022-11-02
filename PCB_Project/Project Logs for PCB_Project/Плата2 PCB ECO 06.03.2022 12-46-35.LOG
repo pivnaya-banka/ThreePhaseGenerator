@@ -1,0 +1,16 @@
+Removed Pin From Net: NetName=ToIA Pin=DA2-1
+Removed Pin From Net: NetName=FromIAC+ Pin=DA2-5
+Removed Pin From Net: NetName=FromIAC- Pin=DA2-6
+Removed Pin From Net: NetName=OutIAC Pin=DA2-7
+Added Pin To Net: NetName=OutIAC Pin=DA2-1
+Added Pin To Net: NetName=FromIAC- Pin=DA2-2
+Added Pin To Net: NetName=FromIAC+ Pin=DA2-3
+Added Pin To Net: NetName=ToIA Pin=DA2-7
+Added Pin To Net: NetName=NetDA2_5 Pin=DA2-5
+Added Pin To Net: NetName=NetDA2_5 Pin=R4-1
+Added Pin To Net: NetName=NetDA2_5 Pin=R7-2
+Added Net: Name=NetDA2_5
+Added Pin To Net: NetName=NetDA2_6 Pin=DA2-6
+Added Pin To Net: NetName=NetDA2_6 Pin=R11-2
+Added Pin To Net: NetName=NetDA2_6 Pin=R12-1
+Added Net: Name=NetDA2_6

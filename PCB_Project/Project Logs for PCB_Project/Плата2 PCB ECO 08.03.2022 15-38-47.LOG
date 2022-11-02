@@ -1,0 +1,44 @@
+Removed Pin From Net: NetName=SW12 Pin=DA4-6
+Removed Pin From Net: NetName=SW34 Pin=DA5-6
+Removed Pin From Net: NetName=SW56 Pin=DA10-6
+Removed Pin From Net: NetName=SW12 Pin=DA11-6
+Removed Pin From Net: NetName=SW34 Pin=DA12-6
+Removed Pin From Net: NetName=SW56 Pin=DA14-6
+Removed Pin From Net: NetName=SW56 Pin=R44-2
+Change Component Comment : Designator=R42 Old Comment=4,7 ךÎל New Comment=Ðוחטסעמנ
+Change Component Comment : Designator=R43 Old Comment=4,7 ךÎל New Comment=Ðוחטסעמנ
+Change Component Comment : Designator=R44 Old Comment=4,7 ךÎל New Comment=Ðוחטסעמנ
+Added Component: Designator=R46(RE_0805)
+Add component. Clean all parameters for all variants
+Added Component: Designator=R47(RE_0805)
+Add component. Clean all parameters for all variants
+Added Component: Designator=R48(RE_0805)
+Add component. Clean all parameters for all variants
+Added Pin To Net: NetName=SW34 Pin=R44-2
+Added Pin To Net: NetName=SW12 Pin=R46-2
+Added Pin To Net: NetName=SW56 Pin=R47-2
+Added Pin To Net: NetName=SW56 Pin=R48-2
+Added Pin To Net: NetName=SW12 Pin=XP8-1
+Added Pin To Net: NetName=SW34 Pin=XP8-2
+Added Pin To Net: NetName=SW56 Pin=XP8-3
+Added Pin To Net: NetName=NetDA4_6 Pin=DA4-6
+Added Pin To Net: NetName=NetDA4_6 Pin=R46-1
+Added Net: Name=NetDA4_6
+Added Pin To Net: NetName=NetDA5_6 Pin=DA5-6
+Added Pin To Net: NetName=NetDA5_6 Pin=R44-1
+Added Net: Name=NetDA5_6
+Added Pin To Net: NetName=NetDA10_6 Pin=DA10-6
+Added Pin To Net: NetName=NetDA10_6 Pin=R47-1
+Added Net: Name=NetDA10_6
+Added Pin To Net: NetName=NetDA11_6 Pin=DA11-6
+Added Pin To Net: NetName=NetDA11_6 Pin=R42-1
+Added Net: Name=NetDA11_6
+Added Pin To Net: NetName=NetDA12_6 Pin=DA12-6
+Added Pin To Net: NetName=NetDA12_6 Pin=R43-1
+Added Net: Name=NetDA12_6
+Added Pin To Net: NetName=NetDA14_6 Pin=DA14-6
+Added Pin To Net: NetName=NetDA14_6 Pin=R48-1
+Added Net: Name=NetDA14_6
+Added Member To Class: ClassName=Ñץולא2 Member=Component R46 Ðוחטסעמנ
+Added Member To Class: ClassName=Ñץולא2 Member=Component R47 Ðוחטסעמנ
+Added Member To Class: ClassName=Ñץולא2 Member=Component R48 Ðוחטסעמנ
